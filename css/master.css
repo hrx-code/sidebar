@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+:root{
+    --primary-color:#30336b;
+    --modal-duration:1s;
+    --secondary-color:#be2edd;
+}
+
+*{
+    box-sizing: border-box;
+}
+body{
+    margin:0;
+    transition:transform 0.4s ease;
+}
+
+body.show-nav{
+    transform:translate(150px);
+}
+
+nav{
+    background-color: #242421;
+    border-right:2px solid rgba(224, 14, 14, 0.1);
+    color:#fff;
+    position: fixed;
+    top:0;
+    left:0;
+    width:150px;
+    height:100%;
+    z-index:100;
+    transform:translateX(-100%);
+}
+
+nav img{
+    border-radius:50%;
+    width:75px;
+    height:75px;
+}
+
+nav .logo{
+    text-align: center;
+    padding:20px 0;
+}
+nav ul{
+    padding:0;
+    margin:0;
+    list-style-type: none;
+}
+
+nav ul li{
+    padding:15px 10px 20px 20px;
+   border-bottom:1px solid #ace6eb;
+}
+
+nav ul li:first-of-type{
+    border-top:1px solid #ace6eb;
+}
+
+nav a{
+    text-decoration: none;
+    color:#fff;
+}
+nav a:hover{
+    text-decoration:underline;
+}
+ 
+header h1{
+    margin:0;
+}
+header{
+    background: #5a6e35;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    padding:40px 10px;
+}
+header p{
+    margin: 30px 0;;
+}
+button,input[type='submit']{
+    border-radius: 5px;
+    padding:5px;
+    background-color: rgb(42, 44, 35);
+    color:#fff;
+    cursor: pointer;
+}
+button:focus{
+    outline: none;
+    appearance: none;
+}
+
+
+.toggle{
+    background:rgba(0, 0, 0, 0.3);
+    position:absolute;
+    left:20px;
+    top: 20px;
+}
+
+.cta-btn{
+    padding: 12px 30px;
+    font-size:20px;
+}
+
+
+.container{
+    margin:0 auto;
+    padding:15px;
+    max-width: 100%;
+    width: 800px;
+}
+
+ .modal-container{
+    background:rgba(0, 0, 0, 0.6);
+    margin:0 auto;
+    padding:auto;
+    display:hidden;
+    display: none;
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+}
+.modal-container.sign_up_pop_up{
+    display: block;
+}
+.modal{
+    background-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    color:#fff;
+    position:absolute;
+    overflow: hidden;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    max-width:100%;
+    width:400px;
+    border-radius: 5px;
+    animation-name:modalopen;
+    animation-duration:1s;
+}
+
+.modal-content{
+    background:#469c52;
+}
+
+.modal-form{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+}
+.modal-form label{
+    display:block;
+    padding-bottom:2px;
+}
+.modal-form input{
+    padding:5px;
+    border-radius:5px;
+    margin-bottom:5px;
+    border-color:#fff;
+    border-style:none;
+}
+.modal-content p{
+    text-align: center;
+    font-weight: 400;
+    padding:10px 0 10px 0; 
+    margin:0;
+}
+.modal-header h3{
+    padding-top:5px;
+    margin:0 0 10px 0;
+    text-align: center;
+}
+.close-btn{
+    background:transparent;
+    border-style: none;
+    font-size:25px;
+    cursor: pointer;
+    /* border:1px solid #67c2ba; */
+    position:absolute;
+    top:0;
+    right:0;
+}
+ 
+@keyframes modalopen{
+    from{
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
